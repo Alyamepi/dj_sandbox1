@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>homepage</title>
+    </head>
+    <body>
+        <h1>This is the calculator</h1>
+        <p>Enter a number and it will be multiplied by 2</p>
+        <form action='/calculator/' method="POST">
+            {% csrf_token %} 
+            {{ form }}
+            Enter a number:<input type="text" name = "n1" />
+        </form>
+    </body>
+</html>
