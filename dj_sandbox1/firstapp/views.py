@@ -20,7 +20,7 @@ def calc(request):
             return render(
             request,
             'firstapp/calculator.html',
-            {"result" : 2*int(numberform.cleaned_data['n1']), 'get':False}
+            {"result" : 2*(numberform.cleaned_data['n1']), 'get':False}
         )
     
     else:
