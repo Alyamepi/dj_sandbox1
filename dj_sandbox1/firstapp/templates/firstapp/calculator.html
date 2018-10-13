@@ -6,11 +6,17 @@
     </head>
     <body>
         <h1>This is the calculator</h1>
+        {% if not get %}       {#variable 'get' is true if http method was true #}
+            <h1>Calculation result</h1>
+            <p>the result of your calculation is: {{result}}</p>
+        {% else %}
+            <h1>... </h1>
+            <p>... </p>
+        {% endif %}
         <p>Enter a number and it will be multiplied by 2</p>
         <form action='/calculator/' method="POST">
             {% csrf_token %} 
-            {{ form }}
-            Enter a number:<input type="text" name = "n1" />
+            {{ asknumber }}
         </form>
     </body>
 </html>

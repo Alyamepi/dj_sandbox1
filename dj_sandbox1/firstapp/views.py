@@ -15,19 +15,20 @@ def home(request):
 
 def calc(request):
     if request.method == "POST":
-        number=AskNumber(request.POST)
-        if number.is_valid():
+        numberform=AskNumber(request.POST)
+        if numberform.is_valid():
             return render(
             request,
-            'firstapp/result.html',
-            {"result" : 2*int(number.cleaned_data['n1']),}
+            'firstapp/calculator.html',
+            {"result" : 2*int(numberform.cleaned_data['n1']), 'get':False}
         )
     
     else:
-        number = AskNumber()
+        
+        numberform = AskNumber()
         return render(
             request,
             'firstapp/calculator.html',
-             {'number':number}
+             {'asknumber':numberform, 'get':True}
         )
 
